@@ -11,7 +11,11 @@
   "You can test equality of many things"
   (= (+ 3 4) 7 (+ 2 5))
 
+<<<<<<< HEAD
   "Some things may appear different, but be the same"
+=======
+  " things may appear different, but be the same"
+>>>>>>> 4c13b0ab423ed14dda7cd27032e75328b761ddad
   (= true (= 2 2/1))
 
   "You cannot generally float to heavens of integers"
@@ -29,8 +33,16 @@
   "Make a keyword with your keyboard"
   (= :hello (keyword "hello"))
 
+<<<<<<< HEAD
   " is all around us"
   (= 'hello (symbol "hello"))
 
   "When things cannot be equal, they must be different"
   (not= :fill-in-the-blank "fill-in-the-blank"))
+=======
+  "Symbolism is all around us"
+  (= 'hello (symbol "hello"))
+
+  "When things cannot be equal, they must be different"
+  (not= :fill-in-the-blank 'fill-in-the-blank))
+>>>>>>> 4c13b0ab423ed14dda7cd27032e75328b761ddad

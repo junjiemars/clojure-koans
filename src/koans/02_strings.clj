@@ -6,11 +6,19 @@
   "A string is nothing more than text surrounded by double quotes"
   (= "hello" "hello")
 
+<<<<<<< HEAD
   "But double quotes are just magic on top of something "
   (= "world" (str 'world))
 
   "You can do more than create strings, you can put them together"
   (= "Cool right?" (str "Cool" " right?"))
+=======
+  "But double quotes are just magic on top of something deeper"
+  (= "world" (str 'world))
+
+  "You can do more than create strings, you can put them together"
+  (= "Cool right?" (str 'Cool " right?"))
+>>>>>>> 4c13b0ab423ed14dda7cd27032e75328b761ddad
 
   "You can even get certain characters"
   (= \C (get "Characters" 0))
@@ -31,7 +39,7 @@
   (= "1, 2, 3" (string/join ", " '(1 2 3)))
 
   "Maybe you want to separate out all your lines"
-  (= [__ __ __] (string/split-lines "1\n2\n3"))
+  (= ["1" "2" "3"] (string/split-lines "1\n2\n3"))
 
   "You may want to make sure your words are backwards"
   (= "olleh" (string/reverse "hello"))
@@ -43,28 +51,28 @@
   (= 13 (.lastIndexOf "hello world, hello" "hello"))
 
   "But when something doesn't exist, it turns up negative"
-  (= __ (.indexOf "hello world" "bob"))
+  (= -1 (.indexOf "hello world" "bob"))
 
   "Sometimes you don't want whitespace cluttering the front and back"
-  (= __ (string/trim "  \nhello world \t \n"))
+  (= "hello world" (string/trim "  \nhello world \t \n"))
 
   "You can check if something is a char"
-  (= __ (char? \c))
+  (= true (char? \c))
 
   "But it may not be"
-  (= __ (char? "a"))
+  (= false (char? "a"))
 
   "But chars aren't strings"
-  (= __ (string? \b))
+  (= false (string? \b))
 
   "Strings are strings"
-  (= true (string? __))
+  (= true (string? ""))
 
   "Some strings may be blank"
-  (= __ (string/blank? ""))
+  (= true (string/blank? ""))
 
   "Even if at first glance they aren't"
-  (= __ (string/blank? " \n \t  "))
+  (= true (string/blank? " \n \t  "))
 
   "However, most strings aren't blank"
-  (= __ (string/blank? "hello?\nare you out there?")))
+  (= false (string/blank? "hello?\nare you out there?")))
